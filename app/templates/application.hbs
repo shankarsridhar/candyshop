@@ -1,5 +1,38 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
 {{outlet}}
+<h1>{{appName}}</h1>
+<section class="catalogue">
+  <h1>Catalogue</h1>
+  <ul class="candy-list grid">
+    {{#each model.candies as |candy|}}
+      <li class="candy-item">
+        {{candy.name}}
+        <img src= {{candy.url}} alt="candy image" class="rounded-border candy-image" /> {{candy.price}}
+        <button {{action "addToCart" candy.id}}>add to cart</button>
+      </li>
+    {{/each}}
+  </ul>
+</section>
+<section class="cart">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Qty</th>
+    </tr>
+    {{#if model.cartItems.length }}
+      {{#each model.cartItems as |item|}}
+        <tr>
+          <td class="name">{{item.name}}</td>
+          <td class="price">{{item.price}}</td>
+          <td class="qty">{{item.qty}}</td>
+        </tr>
+      {{/each}}
+    {{else}}
+      <tr>
+        <td>cart is empty</td>
+      </tr>
+    {{/if}}
+  </table>
+  <p>totalChocolatesCount: {{totalChocolatesCount}}</p>
+  <p>uniqueChocolatesCount: {{uniqueChocolatesCount}}</p>
+</section>
