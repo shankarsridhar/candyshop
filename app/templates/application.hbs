@@ -1,12 +1,11 @@
-{{outlet}}
-<h1>{{appName}}</h1>
+{{!-- <h1>{{appName}}</h1> --}}
 <section class="catalogue">
   <h1>Catalogue</h1>
-  <ul class="candy-list grid">
+  <ul class="candy-list">
     {{#each model.candies as |candy|}}
       <li class="candy-item">
-        {{candy.name}}
-        <img src= {{candy.url}} alt="candy image" class="rounded-border candy-image" /> {{candy.price}}
+        {{candy.name}} (${{candy.price}})
+        <img src= {{candy.url}} alt="candy image" class="rounded-border candy-image" />
         <button {{action "addToCart" candy.id}}>add to cart</button>
       </li>
     {{/each}}
@@ -33,6 +32,9 @@
       </tr>
     {{/if}}
   </table>
-  <p>totalChocolatesCount: {{totalChocolatesCount}}</p>
-  <p>uniqueChocolatesCount: {{uniqueChocolatesCount}}</p>
+  <div>
+    <p>Total Chocolates: {{totalChocolatesCount}}</p>
+    <p>Total Unique Chocolates: {{uniqueChocolatesCount}}</p>
+    <p>Total Amount: {{totalAmount}}</p>
+  </div>
 </section>
