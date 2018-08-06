@@ -1,0 +1,121 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.app-name {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue,
+    Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial,
+    sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #000000e6;
+}
+
+.ember-application {
+  padding: 20px;
+}
+
+.catalogue {
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.rounded-border {
+  border-radius: 100%;
+}
+
+.candy-list {
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+
+  .candy-item {
+    background-color: #fff;
+    border: 1px solid #EFEFEF;
+    padding: 10px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 83ms;
+
+    &:hover {
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .btn-coupon {
+    padding: 4px 12px;
+    cursor: pointer;
+    background-color: #ef7e37;
+    color: #fff;
+    text-transform: capitalize;
+    border-radius: 5px;
+  }
+
+  .btn-cart {
+    padding: 4px 12px;
+    cursor: pointer;
+    background-color: #0073b1;
+    font-weight: 800;
+    color: #fff;
+    text-transform: capitalize;
+  }
+
+  .candy-image {
+    width: 150px;
+    height: 150px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .candy-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.cart {
+  background-color: #fff;
+  min-height: 200px;
+  padding: 12px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.2);
+
+  tbody tr:last-child td {
+    padding-bottom: 40px;
+  }
+
+  td {
+    min-width: 100px;
+  }
+
+  .cart-title {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue,
+      Fira Sans, Ubuntu, Oxygen, Oxygen Sans, Cantarell, Droid Sans, Apple Color Emoji,
+      Segoe UI Emoji, Segoe UI Emoji, Segoe UI Symbol, Lucida Grande, Helvetica, Arial,
+      sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    color: #000000e6;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+}
+
+th,
+td {
+  text-align: left;
+}
+
+.flex {
+  display: flex;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}

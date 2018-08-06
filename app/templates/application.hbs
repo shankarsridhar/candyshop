@@ -1,40 +1,53 @@
-{{!-- <h1>{{appName}}</h1> --}}
-<section class="catalogue">
-  <h1>Catalogue</h1>
+<section class="catalogue text-center">
+  <h1 class="app-name">Welcome to the Candy Shop</h1>
   <ul class="candy-list">
     {{#each model.candies as |candy|}}
-      <li class="candy-item">
-        {{candy.name}} (${{candy.price}})
-        <img src= {{candy.url}} alt="candy image" class="rounded-border candy-image" />
-        <button {{action "addToCart" candy.id}}>add to cart</button>
-      </li>
+      {{candy-item
+        id=candy.id
+        name=candy.name
+        price=candy.price
+        url=candy.url
+        addToCart=(action "addToCart") }}
     {{/each}}
   </ul>
 </section>
 <section class="cart">
   <table>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Qty</th>
-    </tr>
-    {{#if model.cartItems.length }}
-      {{#each model.cartItems as |item|}}
-        <tr>
-          <td class="name">{{item.name}}</td>
-          <td class="price">{{item.price}}</td>
-          <td class="qty">{{item.qty}}</td>
-        </tr>
-      {{/each}}
-    {{else}}
+    <caption class="cart-title">Shopping Cart</caption>
+    <tbody>
       <tr>
-        <td>cart is empty</td>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Qty</th>
       </tr>
-    {{/if}}
+      {{#if model.cartItems.length }}
+        {{#each model.cartItems as |item|}}
+          <tr>
+            <td class="name">{{item.name}}</td>
+            <td class="price">{{item.price}}</td>
+            <td class="qty">{{item.qty}}</td>
+          </tr>
+        {{/each}}
+      {{else}}
+        <tr>
+          <td>cart is empty</td>
+        </tr>
+      {{/if}}
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Total Chocolates:</td>
+        <td>{{totalChocolatesCount}}</td>
+      </tr>
+      <tr>
+        <td>Total Unique Chocolates:</td>
+        <td>{{uniqueChocolatesCount}}</td>
+      </tr>
+      <tr>
+        <td>Total Amount:</td>
+        <td>{{totalAmount}}</td>
+      </tr>
+    </tfoot>
   </table>
-  <div>
-    <p>Total Chocolates: {{totalChocolatesCount}}</p>
-    <p>Total Unique Chocolates: {{uniqueChocolatesCount}}</p>
-    <p>Total Amount: {{totalAmount}}</p>
-  </div>
 </section>
+{{outlet}}

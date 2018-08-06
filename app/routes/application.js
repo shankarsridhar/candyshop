@@ -28,7 +28,7 @@ export default Route.extend({
           id: '4',
           name: 'Kisses',
           url: 'assets/kisses.jpeg',
-          price: 8
+          price: 10
         }
       ],
 
