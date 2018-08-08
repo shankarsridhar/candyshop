@@ -1,7 +1,6 @@
 <section>
   <header class="candy-name text-left">
-    {{name}} 
-    {{log discount.percent isOnSale}}
+    {{name}}
     {{#if isDiscountAllowed}}
       <button class="btn-coupon" {{action "applyCoupon"}}>use coupon</button>
     {{/if}}
