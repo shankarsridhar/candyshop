@@ -46,6 +46,10 @@ export default Controller.extend({
         set(newCandyLineItem, 'qty', 1);
         cartItems.pushObject(newCandyLineItem);
       }
+    },
+
+    resetCart() {
+      this.set('model.cartItems', []);
     }
   }
 });

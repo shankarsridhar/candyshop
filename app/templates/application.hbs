@@ -49,5 +49,8 @@
       </tr>
     </tfoot>
   </table>
+  {{#if model.cartItems.length }}
+    <button {{action "resetCart"}} class="btn-reset-cart">Empty Cart</button>
+  {{/if}}
 </section>
 {{outlet}}
