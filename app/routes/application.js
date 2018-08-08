@@ -10,25 +10,29 @@ export default Route.extend({
           id: '1',
           name: 'Ferrero',
           url: 'assets/ferrero.jpg',
-          price: 10
+          price: 10,
+          isOnSale: true
         },
         {
           id: '2',
           name: 'Lindt',
           url: 'assets/lindt.jpeg',
-          price: 8
+          price: 8,
+          isOnSale: false
         },
         {
           id: '3',
           name: 'Hersheys',
           url: 'assets/hersheys.jpg',
-          price: 8
+          price: 8,
+          isOnSale: true
         },
         {
           id: '4',
           name: 'Kisses',
           url: 'assets/kisses.jpeg',
-          price: 10
+          price: 10,
+          isOnSale: false
         }
       ],
 
