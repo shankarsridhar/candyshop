@@ -11,6 +11,7 @@ export default Route.extend({
           name: 'Ferrero',
           url: 'assets/ferrero.jpg',
           price: 10,
+          originalPrice: 10,
           isOnSale: true
         },
         {
@@ -18,6 +19,7 @@ export default Route.extend({
           name: 'Lindt',
           url: 'assets/lindt.jpeg',
           price: 8,
+          originalPrice: 8,
           isOnSale: false
         },
         {
@@ -25,6 +27,7 @@ export default Route.extend({
           name: 'Hersheys',
           url: 'assets/hersheys.jpg',
           price: 8,
+          originalPrice: 8,
           isOnSale: true
         },
         {
@@ -32,6 +35,7 @@ export default Route.extend({
           name: 'Kisses',
           url: 'assets/kisses.jpeg',
           price: 10,
+          originalPrice: 10,
           isOnSale: false
         }
       ],

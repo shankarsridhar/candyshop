@@ -14,7 +14,7 @@ export default Component.extend({
     return price * (1 - discountPercent);
   }),
 
-  // DEMO: BAD - proto error
+  // DEMO[1]: BAD - proto error
   /* discount: {
     couponNotUsed: true,
     percent: 0.1
@@ -23,7 +23,7 @@ export default Component.extend({
   init() {
     this._super(...arguments);
 
-    // DEMO: [GOOD] - proto error
+    // DEMO[1]: GOOD - proto error
     this.set('discount', {
       couponNotUsed: true,
       percent: 0.1
