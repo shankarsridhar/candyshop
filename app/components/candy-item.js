@@ -15,19 +15,19 @@ export default Component.extend({
   }),
 
   // DEMO[1]: BAD - proto error
-  discount: {
+  /* discount: {
     couponNotUsed: true,
     percent: 0.1
-  },
+  }, */
 
   init() {
     this._super(...arguments);
 
     // DEMO[1]: GOOD - proto error
-    /* this.set('discount', {
+    this.set('discount', {
       couponNotUsed: true,
       percent: 0.1
-    }); */
+    });
     /* you may notice that this.discount = { } works fine here
     this is ONLY possible in the init hook. Properties have their "finalized" values and become observable
     after all of the init()s have run. 
