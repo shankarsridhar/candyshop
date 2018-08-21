@@ -58,11 +58,11 @@ export default Controller.extend({
         set(newCandyLineItem, 'qty', 1);
 
         // DEMO[2.1]: BAD - KVO
-        cartItems.push(newCandyLineItem);
-        console.log(cartItems);
+        /* cartItems.push(newCandyLineItem);
+        console.log(cartItems); */
 
         // DEMO[2.1]: GOOD - KVO
-        /* cartItems.pushObject(newCandyLineItem); */
+        cartItems.pushObject(newCandyLineItem);
       }
     },
 
