@@ -1,5 +1,57 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
+<section class="catalogue text-center">
+  <h1 class="app-name">Welcome to the Candy Shop</h1>
+  <ul class="candy-list">
+    {{#each model.candies as |candy|}}
+      {{candy-item
+        id=candy.id
+        name=candy.name
+        price=candy.price
+        url=candy.url
+        isOnSale=candy.isOnSale
+        addToCart=(action "addToCart") }}
+    {{/each}}
+  </ul>
+</section>
+<section class="cart">
+  <table>
+    <caption class="cart-title">Shopping Cart</caption>
+    <tbody>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Qty</th>
+      </tr>
+      {{#if model.cartItems.length }}
+        {{#each model.cartItems as |item|}}
+          <tr>
+            <td class="name">{{item.name}}</td>
+            <td class="price">{{item.price}}</td>
+            <td class="qty">{{item.qty}}</td>
+          </tr>
+        {{/each}}
+      {{else}}
+        <tr>
+          <td>cart is empty</td>
+        </tr>
+      {{/if}}
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Total Amount:</td>
+        <td>{{totalAmount}}</td>
+      </tr>
+      <tr>
+        <td>Total Savings:</td>
+        <td>{{totalSavings}}</td>
+      </tr>
+      <tr>
+        <td>Unique Chocolates Count:</td>
+        <td>{{uniqueChocolatesCount}}</td>
+      </tr>
+    </tfoot>
+  </table>
+  {{#if model.cartItems.length }}
+    <button {{action "resetCart"}} class="btn-reset-cart">Empty Cart</button>
+  {{/if}}
+</section>
 {{outlet}}
