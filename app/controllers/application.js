@@ -35,14 +35,14 @@ export default Controller.extend({
   }),
 
   // DEMO[2.2]: BAD - listening to `model.cartItems.[]` vs `model.cartItems`
-  uniqueChocolatesCount: computed('model.cartItems', function() {
-    return this.get('model.cartItems.length');
-  }),
-
-  // DEMO[2.2]: GOOD - listening to `model.cartItems.[]` vs `model.cartItems`
-  /* uniqueChocolatesCount: computed('model.cartItems.[]', function() {
+  /* uniqueChocolatesCount: computed('model.cartItems', function() {
     return this.get('model.cartItems.length');
   }), */
+
+  // DEMO[2.2]: GOOD - listening to `model.cartItems.[]` vs `model.cartItems`
+  uniqueChocolatesCount: computed('model.cartItems.[]', function() {
+    return this.get('model.cartItems.length');
+  }),
 
   actions: {
     addToCart(candyId) {
