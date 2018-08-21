@@ -3,7 +3,7 @@ import { get, set, computed, observer } from '@ember/object';
 
 export default Controller.extend({
   // DEMO[3]: BAD - Observer vs computed properties
-  amountSavedObs: observer('model.cartItems.@each.{originalPrice,price,qty}', function() {
+  /* amountSavedObs: observer('model.cartItems.@each.{originalPrice,price,qty}', function() {
     console.log('totalSavings - Observer');
     // TODO: can we listen to `isOnSale` as well, to amplify the problem with observer ?
     let _totalAmountSaved = 0;
@@ -13,10 +13,10 @@ export default Controller.extend({
     });
     _totalAmountSaved = _totalAmountSaved.toFixed(2);
     this.set('totalSavings', _totalAmountSaved);
-  }),
+  }), */
 
   // DEMO[3]: GOOD - Observer vs computed properties
-  /* totalSavings: computed('model.cartItems.@each.{originalPrice,price,qty}', function() {
+  totalSavings: computed('model.cartItems.@each.{originalPrice,price,qty}', function() {
     console.log('totalSavings - Computed Property');
     let _totalAmountSaved = 0;
     const cartItems = get(this, 'model.cartItems');
@@ -25,7 +25,7 @@ export default Controller.extend({
     });
     _totalAmountSaved = _totalAmountSaved.toFixed(2);
     return _totalAmountSaved;
-  }), */
+  }),
 
   totalAmount: computed('model.cartItems.@each.{qty,price}', function() {
     const cartItems = get(this, 'model.cartItems');
